@@ -1,0 +1,488 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+}
+
+/* Fondo principal */
+.contenedor-pagina {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.contenedor-pagina img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Menú de navegación */
+.separaciones {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.separaciones a {
+  color: #FDFDFF;
+  text-decoration: none;
+  font-size: 22px;
+  font-family: 'Otomanopee One', sans-serif;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  transition: color 0.3s ease;
+}
+
+.separaciones a:hover {
+  color: #1DB954;
+}
+
+/* Título principal */
+.nombre-proyecto {
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+}
+
+.label-principal {
+  font-size: 60px;
+  color: #FFFFFF;
+  text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Descripción principal */
+.descripcion {
+  margin: 20px auto;
+  max-width: 700px;
+  text-align: center;
+  font-size: 24px;
+  color: #CCCCCC;
+  padding: 10px;
+}
+
+/* Caja de email */
+.caja-email {
+  background: #000;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.caja-email label {
+  display: block;
+  color: #FFF;
+  margin-bottom: 15px;
+  font-size: 20px;
+  white-space: nowrap;
+  border-right: 3px solid;
+  animation: typing 3s steps(40), blink .5s infinite step-end alternate;
+  overflow: hidden;
+  color: transparent
+}
+
+/* Input email */
+.input-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.escritor {
+  width: 300px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #1F1F1F;
+  color: #FFF;
+  font-size: 18px;
+}
+
+.escritor::placeholder {
+  color: #AAA;
+}
+
+/* Boton enviar */
+.animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: greenyellow;
+  box-shadow: 0 0 0 2px greenyellow;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: greenyellow;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 16px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: greenyellow;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: #212121;
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px greenyellow;
+}
+
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+
+/* Sección reportes y clientes */
+.contenedor-ejemplos {
+  margin: 50px auto;
+  max-width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  background: #D0CFCF;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.area-reportes,
+.registro-clientes {
+  background: #000;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s;
+}
+
+.area-reportes img,
+.registro-clientes img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.5s, filter 0.5s;
+}
+
+.area-reportes:hover img,
+.registro-clientes:hover img {
+  transform: scale(1.1);
+  filter: brightness(70%);
+}
+
+.area-reportes label,
+.registro-clientes label {
+  display: block;
+  margin-top: 15px;
+  font-family: 'Otomanopee One', sans-serif;
+  font-size: 20px;
+  color: #FFF;
+}
+
+/* Floro animado */
+.floro1,
+.floro2 {
+  text-align: center;
+  margin: 20px auto;
+  font-family: 'Otomanopee One', sans-serif;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  animation: typing 4s steps(30), blink 0.6s infinite step-end alternate;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid;
+  width: fit-content;
+}
+
+/* Contenedor de ejemplo 3 */
+.contenedor-ejemplo3 {
+  background: #000;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 50px auto;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+}
+
+.contenedor-ejemplo3 img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.5s;
+}
+
+.contenedor-ejemplo3:hover img {
+  transform: scale(1.05);
+  filter: brightness(70%);
+}
+
+.contenedor-ejemplo3 label {
+  display: block;
+  margin-top: 15px;
+  color: #FFF;
+  font-size: 24px;
+}
+
+/* Footer animado */
+.franja-baja {
+  background: #000;
+  color: #FFF;
+  padding: 60px 20px;
+  position: relative;
+  text-align: center;
+}
+
+.franja-baja img {
+  width: 320px;
+  height: auto;
+  position: absolute;
+  left: 80px;
+  top: 20px;
+  transition: transform 0.5s;
+}
+
+.franja-baja img:hover {
+  transform: scale(1.3);
+}
+
+.franja-baja p {
+  margin-top: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+}
+
+/* Animación de puntos */
+.punto,
+.punto1,
+.punto2 {
+  position: relative;
+}
+
+.punto::before,
+.punto::after,
+.punto1::before,
+.punto1::after,
+.punto2::before,
+.punto2::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.punto::before {
+  background: #EEC380;
+  width: 8px;
+  height: 8px;
+  top: 20%;
+  left: 50%;
+  animation: mover-puntos1 3s infinite linear;
+}
+
+.punto::after {
+  background: #EEC380;
+  width: 12px;
+  height: 12px;
+  top: 50%;
+  left: 40%;
+  animation: mover-puntos 2s infinite linear;
+}
+
+.punto1::before {
+  background: #FFFFFF;
+  width: 8px;
+  height: 8px;
+  top: 80%;
+  left: 10%;
+  animation: mover-puntos 2s infinite linear;
+}
+
+.punto1::after {
+  background: #FFFFFF;
+  width: 15px;
+  height: 15px;
+  top: 20%;
+  left: 60%;
+  animation: mover-puntos1 2s infinite linear;
+}
+
+.punto2::before {
+  background: #a37800;
+  width: 20px;
+  height: 20px;
+  top: 80%;
+  left: 80%;
+  animation: mover-puntos1 1s infinite linear;
+}
+
+.punto2::after {
+  background: #bae204;
+  width: 9px;
+  height: 9px;
+  top: 50%;
+  left: 70%;
+  animation: mover-puntos 3s infinite linear;
+}
+
+/* Footer final */
+.invi {
+  text-align: center;
+  padding: 30px;
+  background: #000;
+  color: #FFF;
+  font-size: 24px;
+  font-family: 'Potta One', cursive;
+}
+
+/* Animaciones */
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+@keyframes mover-puntos {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(120px, 50px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes mover-puntos1 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(120px, 210px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .label-principal {
+    font-size: 36px;
+  }
+
+  .descripcion {
+    font-size: 18px;
+  }
+
+  .contenedor-ejemplos {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .area-reportes,
+  .registro-clientes {
+    width: 90%;
+  }
+
+  .floro1,
+  .floro2 {
+    font-size: 22px;
+  }
+
+  .franja-baja p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .separaciones {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
